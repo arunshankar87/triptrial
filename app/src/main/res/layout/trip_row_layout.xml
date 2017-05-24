@@ -1,0 +1,54 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="obj"
+            type="com.arunshankar.triptrial.Leg" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:padding="6dip">
+
+
+        <TextView
+            android:id="@+id/timePending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:text="@={obj.origin.timePending}"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_toRightOf="@+id/timePending"
+            android:weightSum="2"
+            android:layout_marginLeft="4dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/fromTo"
+                android:text="@={obj.firstLine}"
+                android:layout_height="0dp" />
+            <TextView
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/platformArrivalTime"
+                android:text="@={obj.secondLine}"
+                android:layout_height="0dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
